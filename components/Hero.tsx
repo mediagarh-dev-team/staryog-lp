@@ -1,13 +1,14 @@
-import Image from "next/image";
-import LeadForm from "./LeadForm";
-import { CtaButton } from "./CtaButton";
-import { EVENT, HOST } from "@/lib/content";
+import Image from 'next/image';
+import LeadForm from './LeadForm';
+import { CtaButton } from './CtaButton';
+import { EVENT, HOST } from '@/lib/content';
 
 export default function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-night text-cream">
       <video
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        className="absolute left-1/2 top-1/2 -z-20 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
+        style={{ width: 'auto', height: 'auto' }}
         autoPlay
         muted
         loop
@@ -22,7 +23,7 @@ export default function Hero() {
         className="absolute inset-0 -z-10"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgb(22 12 46 / .94) 0%, rgb(28 18 56 / .84) 40%, rgb(28 18 56 / .4) 72%, rgb(28 18 56 / .22) 100%), linear-gradient(180deg, rgb(22 12 46 / .55) 0%, transparent 25%, transparent 70%, rgb(22 12 46 / .6) 100%)",
+            'linear-gradient(90deg, rgb(22 12 46 / .94) 0%, rgb(28 18 56 / .84) 40%, rgb(28 18 56 / .4) 72%, rgb(28 18 56 / .22) 100%), linear-gradient(180deg, rgb(22 12 46 / .55) 0%, transparent 25%, transparent 70%, rgb(22 12 46 / .6) 100%)',
         }}
       />
 
@@ -30,7 +31,14 @@ export default function Hero() {
         {/* Top bar */}
         <header className="flex items-center justify-between">
           <div className="rounded-2xl bg-cream px-3 py-2 shadow-lg">
-            <Image src="/images/staryog-logo.png" alt="Star Yog Studio" width={180} height={86} priority className="h-[68px] w-auto sm:h-[84px]" />
+            <Image
+              src="/images/staryog-logo.png"
+              alt="Star Yog Studio"
+              width={180}
+              height={86}
+              priority
+              className="h-[68px] w-auto sm:h-[84px]"
+            />
           </div>
           <Image
             src="/images/ish-logo.png"
@@ -55,17 +63,17 @@ export default function Hero() {
               <em className="text-amber-soft">Myths and Facts</em>
             </h1>
             <p className="mt-6 max-w-[560px] text-lg leading-relaxed text-ondark">
-              Find out what sound healing really is, learn the science behind sound and vibration, enjoy a mini sound journey, and see how
-              you can begin your own learning path.
+              Find out what sound healing really is, learn the science behind sound and vibration, enjoy a mini sound
+              journey, and see how you can begin your own learning path.
             </p>
 
             <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4 text-lg">
               {[
-                ["Date", EVENT.date],
-                ["Time", EVENT.time],
-                ["Format", EVENT.format],
+                ['Date', EVENT.date],
+                ['Time', EVENT.time],
+                ['Format', EVENT.format],
               ].map(([k, v], i) => (
-                <div key={k} className={`${i > 0 ? "sm:border-l sm:border-white/25 sm:pl-8" : ""}`}>
+                <div key={k} className={`${i > 0 ? 'sm:border-l sm:border-white/25 sm:pl-8' : ''}`}>
                   <dt className="text-sm font-semibold uppercase tracking-[0.18em] text-amber">{k}</dt>
                   <dd className="mt-1 font-medium">{v}</dd>
                 </div>
@@ -79,13 +87,18 @@ export default function Hero() {
           </div>
 
           {/* Lead form */}
-          <div id="register" className="rise rounded-[28px] border border-white/60 bg-cream p-6 text-ink shadow-[0_24px_56px_rgb(13_5_38/0.45)] sm:p-8 [animation-delay:150ms]">
+          <div
+            id="register"
+            className="rise rounded-[28px] border border-white/60 bg-cream p-6 text-ink shadow-[0_24px_56px_rgb(13_5_38/0.45)] sm:p-8 [animation-delay:150ms]"
+          >
             <span className="inline-flex items-center gap-2 rounded-full bg-saffron/20 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-[#8a3b0e]">
               <span className="live-dot h-2 w-2 rounded-full bg-[#e5483a]" />
               Live · 26 Nov 2026 · 11 AM IST
             </span>
             <h2 className="mt-4 font-serif text-[32px] leading-tight">Reserve your free seat</h2>
-            <p className="mt-2 mb-5 text-base text-body">Register once and get the joining link by email and WhatsApp.</p>
+            <p className="mt-2 mb-5 text-base text-body">
+              Register once and get the joining link by email and WhatsApp.
+            </p>
             <LeadForm source="hero" />
           </div>
         </div>
