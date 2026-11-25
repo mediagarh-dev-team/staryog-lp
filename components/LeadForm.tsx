@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRight, Check, ChevronDown, Loader2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { ArrowRight, ChevronDown, Loader2 } from 'lucide-react';
 import { ROLE_OPTIONS } from '@/lib/content';
 
 type Variant = 'card' | 'inline';
@@ -15,11 +16,25 @@ function validate(v: { name: string; email: string; phone: string }): Errors {
   return e;
 }
 
+/** Pull UTM params + landing/referrer URLs from the browser at submit time */
+function getTrackingData() {
+  if (typeof window === 'undefined') return {};
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get('utm_source') ?? '',
+    utm_medium: params.get('utm_medium') ?? '',
+    utm_campaign: params.get('utm_campaign') ?? '',
+    landing_url: window.location.href,
+    referrer_url: document.referrer,
+  };
+}
+
 export default function LeadForm({ variant = 'card', source }: { variant?: Variant; source: string }) {
   const [values, setValues] = useState({ name: '', email: '', phone: '', role: '' });
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
   const inline = variant === 'inline';
+  const router = useRouter();
 
   const set = (k: keyof typeof values) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setValues((s) => ({ ...s, [k]: e.target.value }));
@@ -36,30 +51,13 @@ export default function LeadForm({ variant = 'card', source }: { variant?: Varia
       const res = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...values, source }),
+        body: JSON.stringify({ ...values, source, ...getTrackingData() }),
       });
       if (!res.ok) throw new Error('failed');
-      setStatus('done');
+      router.push('/thank-you');
     } catch {
       setStatus('error');
     }
-  }
-
-  if (status === 'done') {
-    return (
-      <div
-        className={`flex flex-col items-center justify-center gap-3 text-center ${
-          inline ? 'rounded-full bg-cream px-8 py-6' : 'min-h-[380px]'
-        }`}
-        role="status"
-      >
-        <span className="grid h-14 w-14 place-items-center rounded-full bg-saffron/20 text-rust">
-          <Check size={28} strokeWidth={2.5} />
-        </span>
-        <p className="font-serif text-2xl text-ink">You are in, {values.name.split(' ')[0]}!</p>
-        <p className="text-base text-body">You will receive the details on your WhatsApp number.</p>
-      </div>
-    );
   }
 
   const inputBase =
