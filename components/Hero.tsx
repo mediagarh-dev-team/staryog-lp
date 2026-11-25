@@ -16,7 +16,7 @@ export default function Hero() {
         preload="auto"
         poster="/images/hero-poster.jpg"
       >
-        <source src="/video/hero.mp4" type="video/mp4" />
+        <source src="/video/hero-video-new.mp4" type="video/mp4" />
       </video>
       <div
         aria-hidden

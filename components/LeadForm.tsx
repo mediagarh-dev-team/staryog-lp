@@ -51,7 +51,14 @@ export default function LeadForm({ variant = 'card', source }: { variant?: Varia
       const res = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...values, source, ...getTrackingData() }),
+        // role is kept locally only — not forwarded to the CRM
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          source,
+          ...getTrackingData(),
+        }),
       });
       if (!res.ok) throw new Error('failed');
       router.push('/thank-you');
