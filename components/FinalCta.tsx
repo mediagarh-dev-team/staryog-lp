@@ -22,7 +22,7 @@ export default function FinalCta() {
           Your journey into the world of sound healing starts here
         </h2>
         <p className="mt-5 text-xl font-medium text-amber-soft">
-          Join the free live webinar on 26 November 2026, 11 AM – 12 PM IST.
+          Join the free live webinar on 3 December 2026, 11 AM – 12 PM IST.
         </p>
         <div className="mx-auto mt-10 max-w-[1320px] text-left">
           <LeadForm variant="inline" source="final-cta" />

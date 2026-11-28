@@ -9,10 +9,10 @@ const GTM_ID = 'GTM-WZGQPP3L';
 export const metadata: Metadata = {
   title: 'Sound Healing: Myths and Facts | Free Live Webinar | Star Yog Studio',
   description:
-    'Join the free live webinar on 26 November 2026, 11 AM – 12 PM IST. Learn what sound healing really is with ISH certified trainer Keertie G Sujnaniii.',
+    'Join the free live webinar on 3 December 2026, 11 AM – 12 PM IST. Learn what sound healing really is with ISH certified trainer Keertie G Sujnaniii.',
   openGraph: {
     title: 'Sound Healing: Myths and Facts – Free Live Webinar',
-    description: '26 November 2026, 11 AM – 12 PM IST. Hosted by Star Yog Studio.',
+    description: '3 December 2026, 11 AM – 12 PM IST. Hosted by Star Yog Studio.',
     images: ['/images/hero-team.jpg'],
   },
 };

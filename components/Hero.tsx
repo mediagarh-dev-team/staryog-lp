@@ -93,7 +93,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-saffron/20 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-[#8a3b0e]">
               <span className="live-dot h-2 w-2 rounded-full bg-[#e5483a]" />
-              Live · 26 Nov 2026 · 11 AM IST
+              Live · 3 Dec 2026 · 11 AM IST
             </span>
             <h2 className="mt-4 font-serif text-[32px] leading-tight">Reserve your free seat</h2>
             <p className="mt-2 mb-5 text-base text-body">

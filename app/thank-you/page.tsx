@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, CalendarCheck, Clock, Wifi } from "lucide-react";
-import { EVENT, HOST } from "@/lib/content";
-import Footer from "@/components/Footer";
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight, CalendarCheck, Clock, Wifi } from 'lucide-react';
+import { EVENT, HOST } from '@/lib/content';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: "You're registered! | Sound Healing: Myths and Facts",
-  description: "Your spot is confirmed for the free live webinar on 26 November 2026 at 11 AM IST.",
+  description: 'Your spot is confirmed for the free live webinar on 3 December 2026 at 11 AM IST.',
   robots: { index: false, follow: false },
 };
 
 const details = [
-  { icon: CalendarCheck, label: "Date", value: EVENT.date },
-  { icon: Clock, label: "Time", value: EVENT.time },
-  { icon: Wifi, label: "Format", value: EVENT.format },
+  { icon: CalendarCheck, label: 'Date', value: EVENT.date },
+  { icon: Clock, label: 'Time', value: EVENT.time },
+  { icon: Wifi, label: 'Format', value: EVENT.format },
 ];
 
 export default function ThankYouPage() {
@@ -54,12 +54,14 @@ export default function ThankYouPage() {
             </span>
 
             <h1 className="mt-6 font-serif text-[clamp(2.6rem,5.5vw,4.25rem)] font-normal leading-[1.08]">
-              You're in,<br />
+              You're in,
+              <br />
               <em className="text-amber-soft">see you there!</em>
             </h1>
 
             <p className="mt-5 max-w-[520px] text-lg leading-relaxed text-ondark">
-              Your seat is reserved for the free live webinar. Check your email and WhatsApp for the joining link — it's on its way.
+              Your seat is reserved for the free live webinar. Check your email and WhatsApp for the joining link — it's
+              on its way.
             </p>
 
             {/* Event details */}
@@ -82,9 +84,9 @@ export default function ThankYouPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber mb-4">What to do next</p>
               <ol className="flex flex-col gap-3">
                 {[
-                  "Save 26 November 2026, 11 AM IST in your calendar",
-                  "Look out for the joining link on your email & WhatsApp",
-                  "Join 5 minutes early for the best experience",
+                  'Save 3 December 2026, 11 AM IST in your calendar',
+                  'Look out for the joining link on your email & WhatsApp',
+                  'Join 5 minutes early for the best experience',
                 ].map((step, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-saffron/20 text-xs font-bold text-amber">
@@ -114,8 +116,7 @@ export default function ThankYouPage() {
               <div
                 className="absolute inset-0"
                 style={{
-                  backgroundImage:
-                    "linear-gradient(to top, rgb(20 11 42 / 0.85) 0%, transparent 50%)",
+                  backgroundImage: 'linear-gradient(to top, rgb(20 11 42 / 0.85) 0%, transparent 50%)',
                 }}
               />
               <div className="absolute bottom-0 left-0 right-0 p-6">

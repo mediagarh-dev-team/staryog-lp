@@ -2,15 +2,15 @@ export const HOST = 'Keertie G Sujnaniii';
 export const CTA_LABEL = 'Reserve my free spot';
 
 export const EVENT = {
-  date: '26 November 2026',
-  dateShort: '26 Nov 2026',
+  date: '3 December 2026',
+  dateShort: '3 Dec 2026',
   time: '11 AM – 12 PM IST',
   format: 'Live online, free',
 };
 
 export const INFO_BAND = [
   'Free live webinar',
-  '26 November 2026',
+  '3 December 2026',
   '11 AM – 12 PM IST',
   'Live online',
   'Mini sound journey',
