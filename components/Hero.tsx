@@ -58,13 +58,13 @@ export default function Hero() {
               Free live webinar
             </span>
             <h1 className="mt-6 font-serif text-[clamp(3rem,6vw,4.5rem)] font-normal leading-[1.05]">
-              Sound Healing:
+              Aspiring to become a
               <br />
-              <em className="text-amber-soft">Myths and Facts</em>
+              <em className="text-amber-soft">Certified Sound Healer?</em>
             </h1>
             <p className="mt-6 max-w-[560px] text-lg leading-relaxed text-ondark">
-              Find out what sound healing really is, learn the science behind sound and vibration, enjoy a mini sound
-              journey, and see how you can begin your own learning path.
+              Join our free webinar, where we'll answer your questions, clear your doubts and help you explore your
+              journey into Sound Healing.
             </p>
 
             <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4 text-lg">
