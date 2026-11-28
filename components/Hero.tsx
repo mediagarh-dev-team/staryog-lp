@@ -57,7 +57,7 @@ export default function Hero() {
               <span className="h-1.5 w-1.5 rounded-full bg-amber" />
               Free live webinar
             </span>
-            <h1 className="mt-6 font-serif text-[clamp(3rem,6vw,4.5rem)] font-normal leading-[1.05]">
+            <h1 className="mt-6 font-serif text-[clamp(3rem,6vw,3.5rem)] font-normal leading-[1.05]">
               Aspiring to become a
               <br />
               <em className="text-amber-soft">Certified Sound Healer?</em>
